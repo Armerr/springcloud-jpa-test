@@ -1,0 +1,28 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.class
+
+*.jar
+*.war
+*.ear
+
+## ignore any target dir
+target
+bin
+
+## Ignore project files created by Eclipse
+.settings
+.project
+.classpath
+
+## Ignore project files created by IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.idea/*
+
