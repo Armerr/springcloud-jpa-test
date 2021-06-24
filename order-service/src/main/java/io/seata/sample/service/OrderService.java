@@ -36,7 +36,6 @@ public class OrderService {
         order.setMoney(orderMoney);
 
         orderDAO.save(order);
-//        int i = 0/0;
 
         accountFeignClient.debit(userId, orderMoney);
 

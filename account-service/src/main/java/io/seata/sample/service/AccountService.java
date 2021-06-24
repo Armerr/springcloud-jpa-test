@@ -21,7 +21,7 @@ public class AccountService {
     @Autowired
     private AccountDAO accountDAO;
 
-    @Transactional(rollbackFor = Exception.class)
+
     public void debit(String userId, BigDecimal num) {
         Account account = accountDAO.findByUserId(userId);
         account.setMoney(account.getMoney().subtract(num));

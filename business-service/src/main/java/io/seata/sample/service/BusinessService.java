@@ -1,10 +1,7 @@
 package io.seata.sample.service;
 
-import io.seata.rm.tcc.api.LocalTCC;
 import io.seata.sample.feign.OrderFeignClient;
 import io.seata.sample.feign.StorageFeignClient;
-import io.seata.spring.annotation.GlobalLock;
-import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,10 +26,8 @@ public class BusinessService {
      * @param commodityCode
      * @param orderCount
      */
-    @GlobalTransactional
     public void purchase(String userId, String commodityCode, int orderCount) {
         storageFeignClient.deduct(commodityCode, orderCount);
-//        int i =0/0;
         orderFeignClient.create(userId, commodityCode, orderCount);
     }
 }
