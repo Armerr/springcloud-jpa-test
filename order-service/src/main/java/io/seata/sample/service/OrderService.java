@@ -3,6 +3,8 @@ package io.seata.sample.service;
 import io.seata.sample.entity.Order;
 import io.seata.sample.feign.AccountFeignClient;
 import io.seata.sample.repository.OrderDAO;
+import io.seata.spring.annotation.GlobalLock;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +26,8 @@ public class OrderService {
     @Autowired
     private OrderDAO orderDAO;
 
+
+    @GlobalTransactional
     @Transactional
     public void create(String userId, String commodityCode, Integer count) {
 
