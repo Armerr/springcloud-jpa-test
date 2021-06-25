@@ -1,0 +1,17 @@
+/.metadata/
+/.settings/
+/target/
+
+*.class
+*.log
+.project
+.classpath
+
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+hs_err_pid*
