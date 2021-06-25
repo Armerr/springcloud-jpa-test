@@ -31,8 +31,9 @@ public class BusinessService {
      */
     @GlobalTransactional
     public void purchase(String userId, String commodityCode, int orderCount) {
+        orderFeignClient.create(userId, commodityCode, orderCount);
         storageFeignClient.deduct(commodityCode, orderCount);
 //        int i =0/0;
-        orderFeignClient.create(userId, commodityCode, orderCount);
+
     }
 }
