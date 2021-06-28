@@ -1,5 +1,6 @@
 package io.seata.sample.service;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import io.seata.sample.entity.Account;
 import io.seata.sample.repository.AccountDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,8 @@ public class AccountService {
     @Autowired
     private AccountDAO accountDAO;
 
-
+    @LcnTransaction
+    @Transactional
     public void debit(String userId, BigDecimal num) {
         Account account = accountDAO.findByUserId(userId);
         account.setMoney(account.getMoney().subtract(num));

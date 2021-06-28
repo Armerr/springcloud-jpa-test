@@ -1,5 +1,6 @@
 package io.seata.sample.service;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import io.seata.sample.entity.Order;
 import io.seata.sample.feign.AccountFeignClient;
 import io.seata.sample.repository.OrderDAO;
@@ -24,6 +25,7 @@ public class OrderService {
     @Autowired
     private OrderDAO orderDAO;
 
+    @LcnTransaction
     @Transactional
     public void create(String userId, String commodityCode, Integer count) {
 

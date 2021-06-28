@@ -1,5 +1,6 @@
 package io.seata.sample.service;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import io.seata.sample.feign.OrderFeignClient;
 import io.seata.sample.feign.StorageFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class BusinessService {
      * @param commodityCode
      * @param orderCount
      */
+    @LcnTransaction
     public void purchase(String userId, String commodityCode, int orderCount) {
         storageFeignClient.deduct(commodityCode, orderCount);
         orderFeignClient.create(userId, commodityCode, orderCount);

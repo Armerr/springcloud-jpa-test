@@ -1,5 +1,6 @@
 package io.seata.sample.service;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import io.seata.sample.entity.Storage;
 import io.seata.sample.repository.StorageDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class StorageService {
     @Autowired
     private StorageDAO storageDAO;
 
+    @LcnTransaction
+    @Transactional
     public void deduct(String commodityCode, int count) {
         Storage storage = storageDAO.findByCommodityCode(commodityCode);
         storage.setCount(storage.getCount() - count);

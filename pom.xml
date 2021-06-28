@@ -90,6 +90,18 @@
                 <version>1.16.10</version>
                 <scope>provided</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tc</artifactId>
+                <version>5.0.2.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-txmsg-netty</artifactId>
+                <version>5.0.2.RELEASE</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
