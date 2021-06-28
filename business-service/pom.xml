@@ -40,6 +40,10 @@
             <groupId>io.seata</groupId>
             <artifactId>seata-all</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
