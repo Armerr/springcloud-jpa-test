@@ -22,4 +22,10 @@ public class StorageController {
         storageService.deduct(commodityCode, count);
         return true;
     }
+
+    @GetMapping(path = "/deduct2")
+    public Boolean deduct() {
+        storageService.deduct2();
+        return true;
+    }
 }
